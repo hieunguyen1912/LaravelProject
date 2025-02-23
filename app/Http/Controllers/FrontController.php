@@ -77,6 +77,7 @@ class FrontController extends Controller
         $data = [
             'email' => $check['email'],
             'password' => $check['password'],
+            'status' => 1
         ];
 
 
