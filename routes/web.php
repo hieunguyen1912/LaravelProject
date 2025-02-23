@@ -2,12 +2,20 @@
 
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontController::class, 'home'])->name('home');
+Route::get('/about', [FrontController::class, 'about'])->name('about');
+Route::get('/registration', [FrontController::class, 'registration'])->name('registration');
+Route::get('/registration_verify/{email}/{token}', [FrontController::class, 'registration_verify_email'])->name('registration_verify_email');
+Route::post('/registration', [FrontController::class, 'registration_submit'])->name('registration_submit');
 
+
+Route::get('/login', [FrontController::class, 'login'])->name('login');
+Route::post('/login', [FrontController::class, 'login_submit'])->name('login_submit');
+
+Route::get('/forget_password', [FrontController::class, 'forget_password'])->name('forget_password');
 
 Route::middleware('admin')->prefix('admin')->group(function() {
     Route::get('/profile', [AdminAuthController::class, 'profile'])->name('admin_profile');
