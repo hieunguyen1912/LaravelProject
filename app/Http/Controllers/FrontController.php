@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\Websitemail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -66,7 +67,23 @@ class FrontController extends Controller
         return redirect()->route('login')->with('success', 'Your email is verified. You can login now.');
     }
 
-    public function login_submit() {
-        
+    public function login_submit(Request $request) {
+        $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+
+        $check = $request->all();
+        $data = [
+            'email' => $check['email'],
+            'password' => $check['password'],
+        ];
+
+
+        if(Auth::guard('web')->attempt($data)) {
+            return redirect()->route('user_dashboard')->with('success', 'Login successfully');
+        } else {
+            return redirect()->route('login')->with('error', 'Invalid email or password');
+        }
     }
 }
