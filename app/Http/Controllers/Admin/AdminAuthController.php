@@ -13,6 +13,11 @@ class AdminAuthController extends Controller
         return view('admin.login');
     }
 
+    public function logout() {
+        Auth::guard('admin')->logout();
+        return redirect()->route('admin_login')->with('success', 'Logout successfully');
+    }
+
     public function profile() {
         return view('admin.profile');
     }
@@ -31,6 +36,16 @@ class AdminAuthController extends Controller
             'password' => 'required'
         ]);
 
-        
+        $check = $request->all();
+        $data = [
+            'email' => $check['email'],
+            'password' => $check['password']
+        ];
+
+        if(Auth::guard('admin')->attempt($data)) {
+            return redirect()->route('admin_dashboard')->with('success', 'Login successfully');
+        } else {
+            return redirect()->back()->with('error', 'Invalid email or password');
+        }
     }
 }
