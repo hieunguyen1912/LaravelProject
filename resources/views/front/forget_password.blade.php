@@ -35,7 +35,6 @@
                             <a href="{{ route('login') }}" class="primary-color">Back to Login Page</a>
                         </div>
                     </form>
-                    
                 </div>
             </div>
         </div>

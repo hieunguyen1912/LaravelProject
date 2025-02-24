@@ -41,7 +41,6 @@
                         </div>
                         <div class="col-md-6">
                             <div class="right-side" style="background-image: url(uploads/about-1.jpg);">
-                                <a class="video-button" href="https://www.youtube.com/watch?v=S4DI3Bve_bQ"><span></span></a>
                             </div>
                         </div>
                     </div>
