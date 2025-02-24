@@ -11,12 +11,12 @@
                         <div class="col-lg-6">
                             <div class="text-wrapper">
                                 <div class="text-content">
-                                    <h2>Trip to Nice Cities</h2>
+                                    <h2>Chuyến đi đến các thành phố đẹp</h2>
                                     <p>
-                                        Exploring vibrant cities, immersing in diverse cultures, visiting landmarks, savoring local cuisine, and engaging with locals offer unforgettable experiences, enriching your perspective, and creating lasting memories, making city trips unique and invaluable.
+                                        Khám phá các thành phố sôi động, đắm chìm trong các nền văn hóa đa dạng, đến thăm các địa danh, thưởng thức các món ăn địa phương và gắn kết với người dân địa phương mang đến những trải nghiệm khó quên, làm phong phú thêm quan điểm của bạn và tạo ra những ký ức lâu dài, làm cho các chuyến đi thành phố trở nên độc đáo và vô giá.
                                     </p>
                                     <div class="button-style-1 mt_20">
-                                        <a href="">Read More</a>
+                                        <a href="">Đọc Thêm</a>
                                     </div>
                                 </div>
                             </div>
@@ -33,12 +33,12 @@
                         <div class="col-lg-6">
                             <div class="text-wrapper">
                                 <div class="text-content">
-                                    <h2>Hire Quality Cars</h2>
+                                    <h2>Chuyến đi đến các thành phố đẹp</h2>
                                     <p>
-                                        Hire quality cars for a comfortable and reliable journey, ensuring top performance, advanced features, and exceptional service, making every trip smooth, enjoyable, and stress-free, whether for business or leisure travel.
+                                        Khám phá các thành phố sôi động, đắm chìm trong các nền văn hóa đa dạng, đến thăm các địa danh, thưởng thức các món ăn địa phương và gắn kết với người dân địa phương mang đến những trải nghiệm khó quên, làm phong phú thêm quan điểm của bạn và tạo ra những ký ức lâu dài, làm cho các chuyến đi thành phố trở nên độc đáo và vô giá.
                                     </p>
                                     <div class="button-style-1">
-                                        <a href="">Read More</a>
+                                        <a href="">Đọc thêm</a>
                                     </div>
                                 </div>
                             </div>
@@ -60,15 +60,14 @@
                         <div class="col-md-6">
                             <div class="left-side">
                                 <div class="inner">
-                                    <h3>Welcome to TripSummit</h3>
+                                    <h3>Chào Mừng Đến với Chúng Tôi</h3>
                                     <p>
-                                        At TripSummit, our mission is to turn travel dreams into reality by providing personalized and memorable experiences. We leverage our expertise and trusted partners to ensure every trip is seamless and enjoyable.
+                                        Tại đây, nhiệm vụ của chúng tôi là biến những giấc mơ du lịch thành hiện thực bằng cách chứng minh những trải nghiệm được cá nhân hóa và đáng nhớ. Chúng tôi tận dụng chuyên môn và các đối tác đáng tin cậy của chúng tôi để đảm bảo mọi chuyến đi là liền mạch và thú vị.
                                     </p>
                                     <p>
-                                        We believe travel fosters personal growth and cultural understanding. Our goal is to help clients explore new destinations and connect with diverse cultures. We promote sustainable travel to positively impact communities and preserve our planet’s beauty.
-                                    </p>
+                                        Chúng tôi tin rằng du lịch thúc đẩy sự phát triển cá nhân và hiểu biết văn hóa. Mục tiêu của chúng tôi là giúp khám phá các điểm đến mới và kết nối với các nền văn hóa thợ lặn. Chúng tôi thúc đẩy du lịch bền vững đến các cộng đồng tác động tích cực và bảo tồn vẻ đẹp hành tinh của chúng tôi.                                    </p>
                                     <div class="button-style-1 mt_20">
-                                        <a href="">Read More</a>
+                                        <a href="">Đọc Thêm</a>
                                     </div>
                                 </div>
                             </div>
@@ -91,9 +90,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="heading">
-                    <h2>Popular Destinations</h2>
+                    <h2>Những Địa Điểm Nổi Tiếng</h2>
                     <p>
-                        Explore our most popular travel destinations around the world
+                        Khám phá những địa điểm du lịch nổi tiếng nhất
                     </p>
                 </div>
             </div>
@@ -106,7 +105,7 @@
                     </div>
                     <div class="text">
                         <h2>
-                            <a href="destination.html">Australia</a>
+                            <a href="destination.html">Đà Nẵng</a>
                         </h2>
                     </div>
                 </div>
@@ -118,7 +117,7 @@
                     </div>
                     <div class="text">
                         <h2>
-                            <a href="destination.html">Thailand</a>
+                            <a href="destination.html">Đà Lạt</a>
                         </h2>
                     </div>
                 </div>
@@ -130,7 +129,7 @@
                     </div>
                     <div class="text">
                         <h2>
-                            <a href="destination.html">Canada</a>
+                            <a href="destination.html">Phú Quốc</a>
                         </h2>
                     </div>
                 </div>
@@ -142,7 +141,7 @@
                     </div>
                     <div class="text">
                         <h2>
-                            <a href="destination.html">Dubai</a>
+                            <a href="destination.html">Hà Nội</a>
                         </h2>
                     </div>
                 </div>
@@ -154,7 +153,7 @@
                     </div>
                     <div class="text">
                         <h2>
-                            <a href="destination.html">Portugal</a>
+                            <a href="destination.html">Hồ Chí Minh</a>
                         </h2>
                     </div>
                 </div>
@@ -166,7 +165,7 @@
                     </div>
                     <div class="text">
                         <h2>
-                            <a href="destination.html">Morocco</a>
+                            <a href="destination.html">Hà Giang</a>
                         </h2>
                     </div>
                 </div>
@@ -178,7 +177,7 @@
                     </div>
                     <div class="text">
                         <h2>
-                            <a href="destination.html">Venice</a>
+                            <a href="destination.html">Tà Xùa</a>
                         </h2>
                     </div>
                 </div>
@@ -190,7 +189,7 @@
                     </div>
                     <div class="text">
                         <h2>
-                            <a href="destination.html">Paris</a>
+                            <a href="destination.html">Hải Phòng</a>
                         </h2>
                     </div>
                 </div>
@@ -219,9 +218,9 @@
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <div class="text">
-                        <h2>Explore Destinations</h2>
+                        <h2>Khám phá các điểm đến</h2>
                         <p>
-                            Discover amazing places to visit, from bustling cities to serene beaches, and plan your perfect adventure with our expert guides.
+                            Khám phá những địa điểm tuyệt vời để ghé thăm, từ các thành phố nhộn nhịp đến các bãi biển thanh bình và lên kế hoạch cho cuộc phiêu lưu hoàn hảo của bạn với các hướng dẫn chuyên gia của chúng tôi.
                         </p>
                     </div>
                 </div>
@@ -232,9 +231,9 @@
                         <i class="fas fa-search"></i>
                     </div>
                     <div class="text">
-                        <h2>Custom Travel Packages</h2>
+                        <h2>Gói du lịch tùy chỉnh</h2>
                         <p>
-                            Create custom travel packages designed to your accommodations, activities & transportation for a smooth journey.
+                            Tạo các gói du lịch tùy chỉnh được thiết kế cho chỗ ở, hoạt động & vận chuyển của bạn cho một hành trình suôn sẻ.
                         </p>
                     </div>
                 </div>
@@ -245,9 +244,9 @@
                         <i class="fas fa-share-alt"></i>
                     </div>
                     <div class="text">
-                        <h2>Travel Deals & Discounts</h2>
+                        <h2>Khuyến mãi & giảm giá</h2>
                         <p>
-                            Take advantage of our exclusive travel deals and discounts, ensuring you get the best value for your dream vacation.
+                            Tận dụng các khuyến mãi và giảm giá độc quyền của chúng tôi, đảm bảo bạn nhận được giá trị tốt nhất cho kỳ nghỉ mơ ước của mình.
                         </p>
                     </div>
                 </div>
