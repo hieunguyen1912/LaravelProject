@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\Websitemail;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -33,7 +34,7 @@ class FrontController extends Controller
     public function registration_submit(Request $request) {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required',
             'retype_password' => 'required|same:password'
         ]);
@@ -86,5 +87,51 @@ class FrontController extends Controller
         } else {
             return redirect()->route('login')->with('error', 'Invalid email or password');
         }
+    }
+
+    public function forget_password_submit(Request $request) {
+        $request->validate([
+            'email' => ['required', 'email'],
+        ]);
+    
+        $user = User::where('email',$request->email)->first();
+        if(!$user) {
+            return redirect()->back()->with('error','Email is not found');
+        }
+    
+        $token = hash('sha256',time());
+        $user->token = $token;
+        $user->update();
+        
+        $reset_link = route('reset_password', ['token' => $token, 'email' => $request->email]);
+        $subject = "Password Reset";
+        $message = "To reset password, please click on the link below:<br>";
+        $message .= "<a href='".$reset_link."'>Click Here</a>";
+    
+        Mail::to($request->email)->send(new Websitemail($subject,$message));
+    
+        return redirect()->back()->with('success','We have sent a password reset link to your email. Please check your email. If you do not find the email in your inbox, please check your spam folder.');
+    }
+
+    public function reset_password($token,$email) {
+        $user = User::where('email',$email)->where('token',$token)->first();
+        if(!$user) {
+            return redirect()->route('login')->with('error','Token or email is not correct');
+        }
+        return view('front.reset_password', compact('token','email'));
+    }
+
+    public function reset_password_submit(Request $request, $token, $email) {
+        $request->validate([
+            'password' => ['required'],
+            'retype_password' => ['required', 'same:password']
+        ]);
+
+        $user = User::where('email',$request->email)->where('token',$request->token)->first();
+        $user->password = Hash::make($request->password);
+        $user->token = "";
+        $user->update();
+
+        return redirect()->route('login')->with('success','Password reset successfully');
     }
 }
