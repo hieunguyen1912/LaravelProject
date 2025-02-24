@@ -1,47 +1,30 @@
-<div class="navbar-area" id="stickymenu">
-    <!-- Menu For Mobile Device -->
-    <div class="mobile-nav">
-        <a href="{{ route('home') }}" class="logo">
-            <img src="{{ asset('uploads/logo.png') }}" alt="">
-        </a>
-    </div>
 
-    <!-- Menu For Desktop Device -->
-    <div class="main-nav">
-        <div class="container">
-            <nav class="navbar navbar-expand-md navbar-light">
-                <a class="navbar-brand" href="{{ route('home') }}">
-                    <img src="{{ asset('uploads/logo.png') }}" alt="">
-                </a>
-                <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item {{ Route::is('home') ? 'active' : '' }}">
-                            <a href="{{ route('home') }}" class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item {{ Route::is('about') ? 'active' : '' }}">
-                            <a href="{{ route('about') }}" class="nav-link">About</a>
-                        </li>
-                        <li class="nav-item {{ Route::is('') ? 'active' : '' }}">
-                            <a href="destinations.html" class="nav-link">Destinations</a>
-                        </li>
-                        <li class="nav-item {{ Route::is('') ? 'active' : '' }}">
-                            <a href="packages.html" class="nav-link">Packages</a>
-                        </li>
-                        <li class="nav-item {{ Route::is('') ? 'active' : '' }}">
-                            <a href="team-members.html" class="nav-link">Team</a>
-                        </li>
-                        <li class="nav-item {{ Route::is('') ? 'active' : '' }}">
-                            <a href="faq.html" class="nav-link">FAQ</a>
-                        </li>
-                        <li class="nav-item {{ Route::is('') ? 'active' : '' }}">
-                            <a href="blog.html" class="nav-link">Blog</a>
-                        </li>
-                        <li class="nav-item {{ Route::is('') ? 'active' : '' }}">
-                            <a href="contact.html" class="nav-link">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow">
+    <div class="container">
+        <a class="navbar-brand" href="{{ route('home') }}">
+            <img src="{{ asset('uploads/logo.png') }}" alt="" width="100" height="60">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-primary" href="{{ route('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Destinations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Packages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Contact</a>
+                </li>
+            </ul>
         </div>
     </div>
-</div>
+</nav>
