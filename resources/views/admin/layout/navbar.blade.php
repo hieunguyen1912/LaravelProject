@@ -1,22 +1,15 @@
-<div class="navbar-bg"></div>
-<nav class="navbar navbar-expand-lg main-navbar">
-    <form class="form-inline mr-auto">
-        <ul class="navbar-nav mr-3">
-            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-        </ul>
-    </form>
-    <ul class="navbar-nav navbar-right justify-content-end rightsidetop">
-        <li class="nav-link">
-            <a href="{{ url('/') }}" target="_blank" class="btn btn-warning">Front End</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img alt="image" src="{{ asset('uploads/'.Auth::guard('admin')->user()->photo) }}" class="rounded-circle-custom">
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="{{route('admin_profile')}}"><i class="far fa-user"></i> Edit Profile</a></li>
-                <li><a class="dropdown-item" href="{{route('admin_logout')}}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
+<!-- Header -->
+<div class="header d-flex justify-content-between align-items-center px-4 py-2 bg-primary min-vh-20">
+    <!-- Logo + Menu -->
+    <div class="d-flex align-items-center">
+        <h1 class="h4 text-white m-0">Admin Panel</h1>
+    </div>
+    <!-- Nút "Front End" + Avatar -->
+    <div class="d-flex align-items-center">
+        <button class="btn btn-warning me-10">Front End</button>
+        <a class="nav-link p-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img alt="image" src="{{ asset('uploads/'.Auth::guard('admin')->user()->photo) }}" 
+                class="rounded-circle avatar-img">
+        </a>
+    </div>
+</div>

@@ -1,61 +1,50 @@
 @extends('admin.layout.master')
 
 @section('main_content')
-
 @include('admin.layout.sidebar')
-@include('admin.layout.navbar')
-<div class="main-content">
-    <section class="section">
-        <div class="section-header">
-            <h1>Dashboard</h1>
-        </div>
+<div class="flex-grow-1 d-flex flex-column">
+    
+    @include('admin.layout.navbar')
+    <!-- Dashboard Content -->
+    <div class="p-4 flex-grow-1">
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="card card-statistic-1">
-                    <div class="card-icon bg-primary">
-                        <i class="far fa-user"></i>
+            <!-- Card 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card bg-white">
+                    <div class="icon bg-primary">
+                        <i class="fas fa-user fa-2x"></i>
                     </div>
-                    <div class="card-wrap">
-                        <div class="card-header">
-                            <h4>Total News Categories</h4>
-                        </div>
-                        <div class="card-body">
-                            12
-                        </div>
+                    <div>
+                        <p class="text-muted mb-1">Total News Categories</p>
+                        <p class="h4 mb-0">12</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="card card-statistic-1">
-                    <div class="card-icon bg-danger">
-                        <i class="fas fa-book-open"></i>
+            <!-- Card 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card bg-white">
+                    <div class="icon bg-danger">
+                        <i class="fas fa-book fa-2x"></i>
                     </div>
-                    <div class="card-wrap">
-                        <div class="card-header">
-                            <h4>Total News</h4>
-                        </div>
-                        <div class="card-body">
-                            122
-                        </div>
+                    <div>
+                        <p class="text-muted mb-1">Total News</p>
+                        <p class="h4 mb-0">122</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="card card-statistic-1">
-                    <div class="card-icon bg-warning">
-                        <i class="fas fa-bullhorn"></i>
+            <!-- Card 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card bg-white">
+                    <div class="icon bg-warning">
+                        <i class="fas fa-bullhorn fa-2x"></i>
                     </div>
-                    <div class="card-wrap">
-                        <div class="card-header">
-                            <h4>Total Users</h4>
-                        </div>
-                        <div class="card-body">
-                            45
-                        </div>
+                    <div>
+                        <p class="text-muted mb-1">Total Users</p>
+                        <p class="h4 mb-0">45</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </div>
 @endsection
