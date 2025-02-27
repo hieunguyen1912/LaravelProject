@@ -72,3 +72,7 @@ body {
     border-radius: 50%; /* Bo tròn hình ảnh */
     object-fit: cover; /* Giữ tỉ lệ ảnh */
 }
+
+.active {
+    color: #007bff;
+}

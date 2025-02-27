@@ -10,8 +10,54 @@ class AdminBlogCategoryController extends Controller
 {
     //
     public function index() {
-        return view('admin.blog_categories');
+        $blog_categories = BlogCategory::get();
+        return view('admin.blog_category.index', compact('blog_categories'));
     }
 
-    
+    public function create() {
+        return view('admin.blog_category.create');
+    }
+
+    public function create_submit(Request $request) {
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:blog_categories',
+        ]);
+
+        $obj = new BlogCategory();
+        $obj->name = $request->name;
+        $obj->slug = $request->slug;
+        $obj->save();
+
+        return redirect()->route('admin_blog_category_index')->with('success', 'Blog Category is Created Successfully');
+    }
+
+    public function edit($id) {
+        $blog_category = BlogCategory::where('id', $id)->first();
+        return view('admin.blog_category.edit', compact('blog_category'));
+    }
+
+    public function edit_submit(Request $request) {
+        $obj = BlogCategory::where('id', $request->id)->first();
+
+        $request->validate([
+            'name' => 'required',
+            'slug' => 'required|unique:blog_categories,slug,' . $request->id,
+        ]);
+
+        $obj->name = $request->name;
+        $obj->slug = $request->slug;
+        $obj->save();
+
+        return redirect()->route('admin_blog_category_index')->with('success', 'Blog Category is Updated Successfully');
+
+    }
+
+    public function delete($id) {
+        $blog_category = BlogCategory::findOrFail($id);
+        $blog_category->delete();
+
+        return redirect()->route('admin_blog_category_index')->with('success', 'Blog Category is Deleted Successfully');
+    }
+
 }

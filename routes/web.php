@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminAuthController;
+use App\Http\Controllers\Admin\AdminBlogCategoryController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\User\UserController;
@@ -34,6 +35,14 @@ Route::middleware('admin')->prefix('admin')->group(function() {
     Route::post('/profile', [AdminAuthController::class, 'profile_submit'])->name('admin_profile_submit');
 
     Route::get('/dashboard', [AdminDashboardController::class, 'Dashboard'])->name('admin_dashboard');
+
+    //Blog
+    Route::get('/blog_category/index', [AdminBlogCategoryController::class, 'index'])->name('admin_blog_category_index');
+    Route::get('/blog_category/create', [AdminBlogCategoryController::class, 'create'])->name('admin_blog_category_create');
+    Route::post('/blog_category/create', [AdminBlogCategoryController::class, 'create_submit'])->name('admin_blog_category_create_submit');
+    Route::get('/blog_category/edit/{id}', [AdminBlogCategoryController::class, 'edit'])->name('admin_blog_category_edit');
+    Route::post('/blog_category/edit/{id}', [AdminBlogCategoryController::class, 'edit_submit'])->name('admin_blog_category_edit_submit');
+    Route::get('/blog_category/delete/{id}', [AdminBlogCategoryController::class, 'delete'])->name('admin_blog_category_delete');
 });
 Route::prefix('admin')->group(function() {
     Route::get('/login', [AdminAuthController::class, 'login'])->name('admin_login');
