@@ -1,25 +1,25 @@
 @extends('admin.layout.master')
 @section('main_content')
-@include('admin.layout.nav')
-@include('admin.layout.sidebar')
-<div class="main-content">
-    <section class="section">
-        <div class="section-header justify-content-between">
-            <h1>Edit Post</h1>
-            <div class="ml-auto">
-                <a href="{{ route('admin_post_index') }}" class="btn btn-primary"><i class="fas fa-plus"></i> View All</a>
+<div class="d-flex">
+    @include('admin.layout.sidebar')
+    <div class="main-content flex-grow-1 d-flex flex-column">
+    @include('admin.layout.navbar')
+        <section class="section">
+            <div class="section-header justify-content-between">
+                <h1>Edit Post</h1>
+                <div class="ml-auto">
+                    <a href="{{ route('admin_post_index') }}" class="btn btn-primary"><i class="fas fa-plus"></i> View All</a>
+                </div>
             </div>
-        </div>
-        <div class="section-body">
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
+            <div class="section-body">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
                             <form action="{{ route('admin_post_edit_submit',$post->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
                                     <label class="form-label">Existing Photo</label>
-                                    <div><img src="{{ asset('uploads/'.$post->photo) }}" alt="" class="w_200"></div>
+                                    <div><img src="{{ asset('uploads/'.$post->photo) }}" alt="" class="img-thumbnail"></div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Change Photo</label>
@@ -53,12 +53,12 @@
                                     <label class="form-label"></label>
                                     <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
-                            </form>
+                            </form> 
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </div>
 @endsection
