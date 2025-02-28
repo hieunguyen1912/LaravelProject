@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminBlogCategoryController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
@@ -36,13 +37,22 @@ Route::middleware('admin')->prefix('admin')->group(function() {
 
     Route::get('/dashboard', [AdminDashboardController::class, 'Dashboard'])->name('admin_dashboard');
 
-    //Blog
+    //Blog category
     Route::get('/blog_category/index', [AdminBlogCategoryController::class, 'index'])->name('admin_blog_category_index');
     Route::get('/blog_category/create', [AdminBlogCategoryController::class, 'create'])->name('admin_blog_category_create');
     Route::post('/blog_category/create', [AdminBlogCategoryController::class, 'create_submit'])->name('admin_blog_category_create_submit');
     Route::get('/blog_category/edit/{id}', [AdminBlogCategoryController::class, 'edit'])->name('admin_blog_category_edit');
     Route::post('/blog_category/edit/{id}', [AdminBlogCategoryController::class, 'edit_submit'])->name('admin_blog_category_edit_submit');
     Route::get('/blog_category/delete/{id}', [AdminBlogCategoryController::class, 'delete'])->name('admin_blog_category_delete');
+
+
+    //Post
+    Route::get('/post/index', [AdminPostController::class, 'index'])->name('admin_post_index');
+    Route::get('/post/create', [AdminPostController::class, 'create'])->name('admin_post_create');
+    Route::post('/post/create', [AdminPostController::class, 'create_submit'])->name('admin_post_create_submit');
+    Route::get('/post/edit/{id}', [AdminPostController::class, 'edit'])->name('admin_post_edit');
+    Route::post('/post/edit/{id}', [AdminPostController::class, 'edit_submit'])->name('admin_post_edit_submit');
+    Route::get('/post/delete/{id}', [AdminPostController::class, 'delete'])->name('admin_post_delete');
 });
 Route::prefix('admin')->group(function() {
     Route::get('/login', [AdminAuthController::class, 'login'])->name('admin_login');

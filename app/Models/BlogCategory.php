@@ -9,4 +9,8 @@ class BlogCategory extends Model
 {
     //
     use HasFactory, Notifiable;
+
+    public function posts() {
+        return $this->hasMany(Post::class);
+    }
 }

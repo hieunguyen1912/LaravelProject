@@ -76,3 +76,9 @@ body {
 .active {
     color: #007bff;
 }
+
+.img-thumbnail {
+    width: 100px; /* Giới hạn chiều rộng */
+    height: auto; /* Giữ tỷ lệ ảnh */
+    object-fit: cover; /* Cắt ảnh nếu cần để giữ tỷ lệ */
+}

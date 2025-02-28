@@ -13,8 +13,9 @@
             <i class="fas fa-hand-point-right"></i>Blog Section
         </a>
         <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Blogs</a></li>
+            <li><a class="dropdown-item" href="{{ route('admin_post_index') }}">Blogs</a></li>
             <li><a class="dropdown-item {{ Request::is('admin/blog-category/*') ? 'active' : '' }}" href="{{ route('admin_blog_category_index') }}">Category</a></li>
         </ul>
     </div>
+    
 </div>
