@@ -22,6 +22,10 @@ Route::post('/forget_password', [FrontController::class, 'forget_password_submit
 Route::get('/reset-password/{token}/{email}', [FrontController::class, 'reset_password'])->name('reset_password');
 Route::post('/reset-password/{token}/{email}', [FrontController::class, 'reset_password_submit'])->name('reset_password_submit');
 
+Route::get('/blog', [FrontController::class, 'blog'])->name('blog');
+Route::get('/post/{slug}', [FrontController::class, 'post'])->name('post');
+Route::get('/category/{slug}', [FrontController::class, 'category'])->name('category');
+
 //User
 Route::middleware(['auth'])->prefix('user')->group(function () {    
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('user_dashboard');

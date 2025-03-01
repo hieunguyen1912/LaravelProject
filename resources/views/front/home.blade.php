@@ -259,36 +259,18 @@
         <p class="text-muted">Check out the latest news and updates from our blog post</p>
     </div>
     <div class="row">
+        @foreach($posts as $post)
         <div class="col-md-4 mb-4">
             <div class="card h-100">
-                <img src="https://placehold.co/600x400" class="card-img-top" alt="News image 1">
+                <img src="{{ asset('uploads/'.$post->photo) }}" class="card-img-top" alt="News image 1">
                 <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Partnering to create a strong community</h5>
-                    <p class="card-text text-muted">In order to create a good community we need to work together. We need to help, support each other and be respectful to each other.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
+                    <h5 class="card-title font-weight-bold">{{ $post->title }}</h5>
+                    <p class="card-text text-muted">{{ $post->short_description }}</p>
+                    <a href="{{ route('post', $post->slug) }}" class="btn btn-primary">Read More</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <img src="https://placehold.co/600x400" class="card-img-top" alt="News image 2">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Turning your emergency donation into instant aid</h5>
-                    <p class="card-text text-muted">We are working hard to help the poor people. We are trying to provide them food, shelter, clothing, education and medical assistance.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card h-100">
-                <img src="https://placehold.co/600x400" class="card-img-top" alt="News image 3">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Charity provides educational boost for children</h5>
-                    <p class="card-text text-muted">In order boost the education of the children, we are providing them books, pens, pencils, notebooks and other necessary things.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 

@@ -1,6 +1,6 @@
  /* Footer Section */
  .footer {
-    background-color: white;
+    background-color: #d8d8d8;
     padding-top: 70px;
     padding-bottom: 30px;
 }
@@ -154,4 +154,8 @@
     background-position: center;
     min-height: 400px;
     border-radius: 6px
+}
+
+.page-top{
+    background-size: cover; background-position: center; padding: 50px 0;
 }

@@ -19,7 +19,7 @@
                     <a class="nav-link text-dark" href="#">Packages</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Blog</a>
+                    <a class="nav-link text-dark" href="{{ route('blog') }}">Blog</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="#">Contact</a>

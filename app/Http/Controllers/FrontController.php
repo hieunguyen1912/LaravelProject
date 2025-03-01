@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Mail\Websitemail;
+use App\Models\BlogCategory;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Post;
 
 class FrontController extends Controller
 {
     public function home() {
-        return view('front.home');
+
+        $posts = Post::with('blog_category')->orderBy('id','desc')->get()->take(3);
+        return view('front.home', compact('posts'));
     }
 
     public function about() {
@@ -133,5 +137,26 @@ class FrontController extends Controller
         $user->update();
 
         return redirect()->route('login')->with('success','Password reset successfully');
+    }
+
+
+    public function blog() {
+
+        $posts = Post::with('blog_category')->paginate(3);
+        return view('front.blog', compact('posts'));
+    }
+
+    public function post($slug) {
+        $categories = BlogCategory::get();
+        $post = Post::with('blog_category')->where('slug', $slug)->first();
+        $latest_posts = Post::with('blog_category')->orderBy('id', 'desc')->get()->take(5);
+        return view('front.post', compact('post', 'categories', 'latest_posts'));
+    }
+
+    public function category($slug) {
+
+        $category = BlogCategory::where('slug', $slug)->first();
+        $posts = Post::with('blog_category')->where('blog_category_id', $category->id)->orderBy('id', 'desc')->paginate(9);  
+        return view('front.category', compact('posts','category'));
     }
 }
