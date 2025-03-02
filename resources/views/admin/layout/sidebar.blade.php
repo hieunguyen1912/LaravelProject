@@ -17,5 +17,10 @@
             <li><a class="dropdown-item {{ Request::is('admin/blog-category/*') ? 'active' : '' }}" href="{{ route('admin_blog_category_index') }}">Category</a></li>
         </ul>
     </div>
+
+    <a href="{{ route('admin_destination_index') }}" class="{{ Request::is('admin/destination/*') ? 'text-primary' : '' }}">
+        <i class="fas fa-hand-point-right"></i>
+        Destination
+    </a>
     
 </div>
