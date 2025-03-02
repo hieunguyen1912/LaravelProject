@@ -77,14 +77,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-                        
-
-                                
-                                
-
-                                
-
                                 <div class="form-group">
                                     <label for="slug">Visa requirement *</label>
                                     <input type="text" class="form-control" name="visa_requirement" value="{{ old('visa_requirement') }}">
