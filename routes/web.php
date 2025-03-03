@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminDestinationController;
+use App\Http\Controllers\Admin\AdminUserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,6 +27,9 @@ Route::post('/reset-password/{token}/{email}', [FrontController::class, 'reset_p
 Route::get('/blog', [FrontController::class, 'blog'])->name('blog');
 Route::get('/post/{slug}', [FrontController::class, 'post'])->name('post');
 Route::get('/category/{slug}', [FrontController::class, 'category'])->name('category');
+Route::get('/destinations/{slug}', [FrontController::class, 'destination'])->name('destination');
+Route::get('/destinations', [FrontController::class, 'destinations'])->name('destinations');
+
 
 //User
 Route::middleware(['auth'])->prefix('user')->group(function () {    
@@ -67,6 +71,16 @@ Route::middleware('admin')->prefix('admin')->group(function() {
     Route::get('/destination/edit/{id}', [AdminDestinationController::class, 'edit'])->name('admin_destination_edit');
     Route::post('/destination/edit/{id}', [AdminDestinationController::class, 'edit_submit'])->name('admin_destination_edit_submit');
     Route::get('/destination/delete/{id}', [AdminDestinationController::class, 'delete'])->name('admin_destination_delete');
+
+
+    //User
+    Route::get('/users', [AdminUserController::class, 'users'])->name('admin_users');
+    Route::get('/users/create', [AdminUserController::class, 'user_create'])->name('admin_user_create');
+    Route::post('/users/create', [AdminUserController::class, 'user_create_submit'])->name('admin_user_create_submit');
+    Route::get('/user/edit/{id}', [AdminUserController::class, 'user_edit'])->name('admin_user_edit');
+    Route::post('/user/edit/{id}', [AdminUserController::class, 'user_edit_submit'])->name('admin_user_edit_submit');
+
+    
 });
 Route::prefix('admin')->group(function() {
     Route::get('/login', [AdminAuthController::class, 'login'])->name('admin_login');

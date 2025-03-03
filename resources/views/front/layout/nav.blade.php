@@ -10,19 +10,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-primary" href="{{ route('home') }}">Home</a>
+                    <a class="nav-link {{ Request::is('/') ? 'text-primary' : '' }}" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Destinations</a>
+                    <a class="nav-link {{ Request::is('destinations') ? 'text-primary' : '' }}" href="{{ route('destinations') }}">Destinations</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Packages</a>
+                    <a class="nav-link {{ Request::is('') ? 'text-primary' : '' }}" href="#">Packages</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="{{ route('blog') }}">Blog</a>
+                    <a class="nav-link {{ Request::is('blog') ? 'text-primary' : '' }}" href="{{ route('blog') }}">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Contact</a>
+                    <a class="nav-link {{ Request::is('contact') ? 'text-primary' : '' }}" href="#">Contact</a>
                 </li>
             </ul>
         </div>

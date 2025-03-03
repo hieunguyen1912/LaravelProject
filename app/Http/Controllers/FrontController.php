@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\Websitemail;
 use App\Models\BlogCategory;
+use App\Models\Destination;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,8 @@ class FrontController extends Controller
     public function home() {
 
         $posts = Post::with('blog_category')->orderBy('id','desc')->get()->take(3);
-        return view('front.home', compact('posts'));
+        $destinations = Destination::orderBy('view_count', 'desc')->get()->take(8);
+        return view('front.home', compact('posts', 'destinations'));
     }
 
     public function about() {
@@ -158,5 +160,18 @@ class FrontController extends Controller
         $category = BlogCategory::where('slug', $slug)->first();
         $posts = Post::with('blog_category')->where('blog_category_id', $category->id)->orderBy('id', 'desc')->paginate(9);  
         return view('front.category', compact('posts','category'));
+    }
+
+
+    public function destinations() {
+        $destinations = Destination::orderBy('id', 'desc')->paginate(9);
+        return view('front.destinations', ['destinations'=>$destinations]);
+    }
+
+    public function destination($slug) {
+        $destination = Destination::where('slug', $slug)->first();
+        $destination->view_count = $destination->view_count + 1;
+        $destination->update();
+        return view('front.destination', compact('destination'));
     }
 }

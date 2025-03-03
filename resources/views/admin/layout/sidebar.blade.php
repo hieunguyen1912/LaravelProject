@@ -22,5 +22,10 @@
         <i class="fas fa-hand-point-right"></i>
         Destination
     </a>
+
+    <a href="{{ route('admin_users') }}" class="{{ Request::is('admin/users/*') ? 'text-primary' : '' }}">
+        <i class="fas fa-hand-point-right"></i>
+        User
+    </a>
     
 </div>

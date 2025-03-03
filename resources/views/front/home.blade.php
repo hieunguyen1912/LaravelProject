@@ -55,76 +55,30 @@
 <div class="container py-5">
     <h1 class="text-center mb-3">Những Địa Điểm Nổi Tiếng</h1>
     <p class="text-center text-muted mb-5">Khám phá những địa điểm du lịch nổi tiếng nhất</p>
+
     <div class="row">
+        @foreach($destinations as $destination)
         <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-                <img src="https://placehold.co/300x200" class="card-img-top" alt="Image of Đà Nẵng">
-                <div class="card-body text-center">
-                    <p class="card-text font-weight-bold">Đà Nẵng</p>
+            <div class="destination-card shadow-sm">
+                <div class="destination-image">
+                    <a href="{{asset('destination', $destination->slug)}}">
+                        <img src="{{ asset('uploads/'.$destination->featured_photo) }}" alt="Image of {{ $destination->name }}">
+                    </a>
+                </div>
+                <div class="destination-body">
+                    <p class="destination-text">{{ $destination->name }}</p>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-                <img src="https://placehold.co/300x200" class="card-img-top" alt="Image of Đà Lạt">
-                <div class="card-body text-center">
-                    <p class="card-text font-weight-bold">Đà Lạt</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-                <img src="https://placehold.co/300x200" class="card-img-top" alt="Image of Phú Quốc">
-                <div class="card-body text-center">
-                    <p class="card-text font-weight-bold">Phú Quốc</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-                <img src="https://placehold.co/300x200" class="card-img-top" alt="Image of Hà Nội">
-                <div class="card-body text-center">
-                    <p class="card-text font-weight-bold">Hà Nội</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-                <img src="https://placehold.co/300x200" class="card-img-top" alt="Image of Hồ Chí Minh">
-                <div class="card-body text-center">
-                    <p class="card-text font-weight-bold">Hồ Chí Minh</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-                <img src="https://placehold.co/300x200" class="card-img-top" alt="Image of Hà Giang">
-                <div class="card-body text-center">
-                    <p class="card-text font-weight-bold">Hà Giang</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-                <img src="https://placehold.co/300x200" class="card-img-top" alt="Image of Tà Xùa">
-                <div class="card-body text-center">
-                    <p class="card-text font-weight-bold">Tà Xùa</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-                <img src="https://placehold.co/300x200" class="card-img-top" alt="Image of Hải Phòng">
-                <div class="card-body text-center">
-                    <p class="card-text font-weight-bold">Hải Phòng</p>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
+
     <div class="text-center mt-4">
-        <button class="btn btn-primary">View All Destinations</button>
+        <a href="{{ route('destinations') }}" class="btn btn-primary">View All Destinations</a>
     </div>
 </div>
+
+
 
 <div class="container py-5">
     <div class="text-center mb-5">
